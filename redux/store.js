@@ -2,11 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { jsonPlaceholderApi } from '../services/ApiSlice';
+import counterReducerSlice from '../services/CounterSlice';
+import contentReducerSlice from '../services/contentValidationSlice';
 
 export const store = configureStore({
 	reducer: {
 		// Add the generated reducer as a specific top-level slice
 		[jsonPlaceholderApi.reducerPath]: jsonPlaceholderApi.reducer,
+		counter: counterReducerSlice,
+		isVisible: contentReducerSlice,
 	},
 	// Adding the api middleware enables caching, invalidation, polling,
 	// and other useful features of `rtk-query`.
