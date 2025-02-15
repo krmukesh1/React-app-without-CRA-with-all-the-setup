@@ -1,6 +1,5 @@
 import React from 'react';
 import APIcall from './pages/APIcall';
-
 const App = () => {
 	return (
 		<div>
