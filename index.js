@@ -4,15 +4,18 @@ import App from './src/App.js';
 import reportWebVitals from './reportWebVitals.js';
 import { Provider } from 'react-redux';
 import { store } from './redux/store.js';
+import { BrowserRouter } from 'react-router';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-	<React.Fragment>
+	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
 		</Provider>
-	</React.Fragment>
+	</React.StrictMode>
 );
 reportWebVitals(console.log);

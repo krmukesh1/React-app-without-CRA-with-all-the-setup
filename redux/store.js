@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { jsonPlaceholderApi } from '../services/ApiSlice';
 import counterReducerSlice from '../services/CounterSlice';
 import contentReducerSlice from '../services/contentValidationSlice';
+import { jsonPlaceholderApi } from '../services/ApiSlice';
 
 export const store = configureStore({
 	reducer: {

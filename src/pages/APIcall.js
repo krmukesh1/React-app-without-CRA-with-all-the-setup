@@ -3,7 +3,7 @@ import { useGetPostsQuery } from '../../services/ApiSlice';
 
 const APIcall = () => {
 	const { data, isLoading } = useGetPostsQuery;
-	console.log(data, data);
+	console.log(data, isLoading);
 	return (
 		<div>
 			<h1>Testing</h1>

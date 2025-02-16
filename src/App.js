@@ -1,24 +1,24 @@
 import React from 'react';
-import APIcall from './pages/APIcall';
-import Counter from './components/Counter';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleVisibility } from '../services/contentValidationSlice';
+
+import Header from './components/Header';
+import { Routes, Route } from 'react-router';
+import Home from './pages/Home';
+import Footer from './components/Footer';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import GitCommit from './pages/GitCommit';
 const App = () => {
-	const dispatch = useDispatch();
-	const isVisible = useSelector((state) => state.isVisible.isVisible);
 	return (
-		<div>
-			{isVisible && <h1>Hello</h1>}
-			<button
-				onClick={() => {
-					dispatch(toggleVisibility());
-				}}
-			>
-				Toogle Button
-			</button>
-			<APIcall />
-			<Counter />
-		</div>
+		<React.Fragment>
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/about" element={<About />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="/git-commit-standards" element={<GitCommit />} />
+			</Routes>
+			<Footer />
+		</React.Fragment>
 	);
 };
 
