@@ -21,6 +21,7 @@ export default {
 		open: false,
 		hot: true,
 		liveReload: true,
+		historyApiFallback: true,
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.json'],

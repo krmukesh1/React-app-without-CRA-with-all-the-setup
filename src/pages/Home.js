@@ -29,6 +29,33 @@ const Home = () => {
 	return (
 		<div style={styles.container}>
 			<h1 style={styles.heading}>Installed Software without using CRA</h1>
+			<p style={styles.paragraph}>
+				<strong>Note:</strong> For React Router v7, some routes may cause the
+				page to reload. To handle this, you can set{' '}
+				<code>historyApiFallback: true</code> in the
+				<code>devServer</code> configuration of your{' '}
+				<code>webpack.config.js</code> file.
+				<DocumentationLink
+					url={
+						'https://www.dhiwise.com/post/a-comprehensive-guide-to-fixing-react-router-refresh-404'
+					}
+					text={'Why Don\'t React Router URLs Work When Refreshing?'}
+				/>
+				<pre>
+					<code>
+						{`devServer: {
+    port: '5000',
+    static: {
+        directory: path.join(__dirname, 'public'),
+    },
+    open: false,
+    hot: true,
+    liveReload: true,
+    historyApiFallback: true, // historyApiFallback: true
+}`}
+					</code>
+				</pre>
+			</p>
 			<DocumentationLink
 				url={
 					'https://dev.to/ivadyhabimana/how-to-create-a-react-app-without-using-create-react-app-a-step-by-step-guide-30nl'
